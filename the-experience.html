@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Experience — Enhe Hu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="experience-page">
+  <!--
+    NOTE: on the live Cargo site this page is a dark, WebGL-driven
+    "wander through three viewpoints" interaction (eye-icon hotspots that
+    reveal a section illustration + collage per viewpoint). That kind of
+    custom canvas interaction is out of scope for a plain HTML/CSS rebuild.
+    This is a simplified static approximation: click I / II / III to view
+    each panel. Rebuild with real WebGL/canvas work later if you want the
+    original interaction back.
+  -->
+  <header class="site-header">
+    <a href="index.html" class="logo">Enhe™</a>
+  </header>
+
+  <div class="experience-main">
+    <img id="exp-img" src="assets/img/LongPerspectiveSectionImageFinal.png" alt="1:50 Section Illustration + Collage">
+  </div>
+
+  <nav class="experience-links">
+    <a href="#" data-src="assets/img/LongPerspectiveSectionImageFinal.png">I →</a>
+    <a href="#" data-src="assets/img/black.png">II →</a>
+    <a href="#" data-src="assets/img/ShortSectionBeforeChimney.png">III →</a>
+  </nav>
+  <p class="experience-note">1:50 Section Illustration + Collage — click I / II / III to view each viewpoint</p>
+
+  <footer class="site-footer" style="color:#666;">©2026 Enhe Hu.</footer>
+
+  <script>
+    document.querySelectorAll('.experience-links a').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById('exp-img').src = a.dataset.src;
+      });
+    });
+  </script>
+</body>
+</html>
