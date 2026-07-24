@@ -1,0 +1,250 @@
+/* ==========================================================================
+   Enhe Hu — Portfolio
+   Rebuilt from the live chuckhu.org (Cargo) site.
+   Font substitution note: the original site uses Cargo's licensed
+   "Monument Grotesk Mono" webfont (served from type.cargo.site), which is
+   not ours to redistribute. This rebuild uses a free equivalent
+   (JetBrains Mono via Google Fonts, falling back to system monospace).
+   ========================================================================== */
+
+:root {
+  --red: #d92020;
+  --red-soft: rgba(217, 32, 32, 0.75);
+  --gray: #7a7a7a;
+  --bg: #ffffff;
+  --bg-dark: #0d0d0d;
+  --fg-dark: #f2f2f2;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "Courier New", monospace;
+  --max-w: 1600px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--red-soft);
+  font-family: var(--mono);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--red-soft);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; display: block; }
+
+/* ---- Top bar / logo ---- */
+.site-header {
+  padding: 32px 24px 0;
+}
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--red-soft);
+}
+
+/* ---- Home page ---- */
+.home-main {
+  padding: 24px 24px 64px;
+  max-width: var(--max-w);
+}
+.nav-links {
+  list-style: none;
+  margin: 48px 0 40px;
+  padding: 0;
+  font-weight: 700;
+  font-size: 20px;
+}
+.nav-links li { margin-bottom: 4px; }
+.nav-links .arrow { display: inline-block; width: 1.2em; }
+
+.selected-work-label {
+  color: var(--gray);
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.work-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 20px;
+}
+.work-list li {
+  margin-bottom: 6px;
+}
+.work-list a { display: inline-block; }
+
+/* ---- Footer ---- */
+.site-footer {
+  margin-top: auto;
+  padding: 16px 24px;
+  font-size: 13px;
+  color: var(--gray);
+}
+
+/* ---- Project pages ---- */
+.project-hero {
+  text-align: center;
+  padding: 120px 24px 60px;
+}
+.project-hero h1 {
+  font-size: 42px;
+  letter-spacing: 1px;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+.project-hero p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.project-section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+.project-section h2 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+.project-section .subhead {
+  text-align: center;
+  color: var(--gray);
+  margin: 0 0 32px;
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 24px 0;
+}
+.img-grid figure { margin: 0; }
+figure { margin: 0 0 32px; }
+figcaption {
+  font-size: 13px;
+  color: var(--gray);
+  margin-top: 8px;
+  text-align: center;
+}
+
+.hover-reveal { position: relative; }
+.hover-reveal .caption-tag {
+  font-size: 12px;
+  color: var(--gray);
+  text-align: center;
+  margin-top: 6px;
+}
+
+.full-bleed { width: 100%; }
+
+.next-project {
+  text-align: center;
+  padding: 60px 24px 100px;
+}
+.next-project .label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--gray);
+}
+.next-project a {
+  font-size: 32px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ---- CV / Information page ---- */
+.cv-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+}
+.cv-page h1 { font-size: 28px; margin-bottom: 40px; }
+.cv-section { margin-bottom: 32px; }
+.cv-section h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--red-soft);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+.cv-entry {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.cv-entry .role { color: var(--gray); }
+.cv-entry .date { white-space: nowrap; color: var(--gray); }
+.cv-updated { font-size: 12px; color: var(--gray); margin-top: 48px; }
+
+/* ---- Contact page ---- */
+.contact-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 140px 24px;
+  text-align: center;
+}
+.contact-page a.email {
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ---- The Experience (dark interactive page) ---- */
+.experience-page {
+  background: var(--bg-dark);
+  color: var(--fg-dark);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.experience-page .site-header .logo { color: var(--red); }
+.experience-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+.experience-main img {
+  max-width: 90vw;
+  max-height: 70vh;
+}
+.experience-links {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  padding: 0 24px 60px;
+  flex-wrap: wrap;
+}
+.experience-links a {
+  color: var(--fg-dark);
+  font-size: 18px;
+  text-decoration: underline;
+}
+.experience-note {
+  text-align: center;
+  color: #888;
+  font-size: 12px;
+  padding-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+  .project-hero h1 { font-size: 28px; }
+  .nav-links, .work-list { font-size: 17px; }
+}
